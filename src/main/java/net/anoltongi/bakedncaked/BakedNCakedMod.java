@@ -1,6 +1,10 @@
 package net.anoltongi.bakedncaked;
 
 import com.mojang.logging.LogUtils;
+import net.anoltongi.bakedncaked.block.ModBlocks;
+import net.anoltongi.bakedncaked.item.ModCreativeModeTabs;
+import net.anoltongi.bakedncaked.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,6 +29,11 @@ public class BakedNCakedMod
     public BakedNCakedMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -35,10 +44,26 @@ public class BakedNCakedMod
 
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            //event.accept(ModItems.temp);
 
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+                //event.accept(ModBlocks.ALEXANDRITE_BLOCK);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.BREAD_SLICE);
+            event.accept(ModItems.TOAST);
+            event.accept(ModItems.CHOCOLATE_PASTE);
+            event.accept(ModItems.CHOCOLATE_PASTE_BREAD_SLICE);
+            event.accept(ModItems.SWEET_BERRY_JAM);
+            event.accept(ModItems.SWEET_BERRY_JAM_BREAD_SLICE);
+            event.accept(ModItems.GLOW_BERRY_JAM);
+            event.accept(ModItems.GLOW_BERRY_JAM_BREAD_SLICE);
+        }
     }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
