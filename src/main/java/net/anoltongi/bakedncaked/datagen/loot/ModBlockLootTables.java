@@ -17,6 +17,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         //this.dropSelf(ModBlocks.ALEXANDRITE_BLOCK.get());
+        this.dropWhenSilkTouch(ModBlocks.APPLE_PIE.get());
+        this.dropWhenSilkTouch(ModBlocks.SWEET_BERRY_PIE.get());
+        this.dropWhenSilkTouch(ModBlocks.GLOW_BERRY_PIE.get());
+        this.dropWhenSilkTouch(ModBlocks.BLUE_BERRY_PIE.get());
+        this.dropWhenSilkTouch(ModBlocks.CHOCOLATE_CAKE.get());
+        this.dropWhenSilkTouch(ModBlocks.CARROT_CAKE.get());
 
         //this.add(ModBlocks.ALEXANDRITE_ORE.get(),
                 //block -> createOreDrop(ModBlocks.ALEXANDRITE_ORE.get(), ModItems.RAW_ALEXANDRITE.get()));

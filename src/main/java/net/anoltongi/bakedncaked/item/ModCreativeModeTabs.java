@@ -25,6 +25,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLOW_BERRY_JAM_BREAD_SLICE.get());
                         output.accept(ModItems.SWEET_BERRY_JAM.get());
                         output.accept(ModItems.SWEET_BERRY_JAM_BREAD_SLICE.get());
+                        output.accept(ModItems.CHOCOLATE_CAKE_SLICE.get());
+                        output.accept(ModItems.CARROT_CAKE_SLICE.get());
+                        output.accept(ModItems.APPLE_PIE_SLICE.get());
+                        output.accept(ModItems.SWEET_BERRY_PIE_SLICE.get());
+                        output.accept(ModItems.GLOW_BERRY_PIE_SLICE.get());
+                        output.accept(ModItems.BLUE_BERRY_PIE_SLICE.get());
+                        output.accept(ModBlocks.CHOCOLATE_CAKE.get());
+                        output.accept(ModBlocks.CARROT_CAKE.get());
+                        output.accept(ModBlocks.APPLE_PIE.get());
+                        output.accept(ModBlocks.SWEET_BERRY_PIE.get());
+                        output.accept(ModBlocks.GLOW_BERRY_PIE.get());
+                        output.accept(ModBlocks.BLUE_BERRY_PIE.get());
                     }).build());
 
 

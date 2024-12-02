@@ -5,6 +5,8 @@ import net.anoltongi.bakedncaked.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -23,6 +25,26 @@ public class ModBlocks {
     //public static final RegistryObject<Block> ALEXANDRITE_BLOCK = registerBlock("alexandrite_block",
             //() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE)
                     //.requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> CHOCOLATE_CAKE = registerBlock("chocolate_cake",
+        () -> new CakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
+
+    public static final RegistryObject<Block> CARROT_CAKE = registerBlock("carrot_cake",
+            () -> new CakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
+
+    public static final RegistryObject<Block> APPLE_PIE = registerBlock("apple_pie",
+            () -> new CakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
+
+    public static final RegistryObject<Block> SWEET_BERRY_PIE = registerBlock("sweet_berry_pie",
+            () -> new CakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
+
+    public static final RegistryObject<Block> GLOW_BERRY_PIE = registerBlock("glow_berry_pie",
+            () -> new CakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
+
+    public static final RegistryObject<Block> BLUE_BERRY_PIE = registerBlock("blue_berry_pie",
+            () -> new CakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
+
+
 
 
 

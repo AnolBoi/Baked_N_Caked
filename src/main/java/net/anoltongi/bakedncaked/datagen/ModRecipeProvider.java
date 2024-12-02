@@ -92,14 +92,58 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         of(ModItems.BREAD_SLICE.get(), Items.GLOW_BERRIES).build()))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.APPLE_PIE_SLICE.get(), 6)
+                .requires(ModBlocks.APPLE_PIE.get())
+                .unlockedBy("has_apple_pie", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.APPLE_PIE.get()).build()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SWEET_BERRY_PIE_SLICE.get(), 6)
+                .requires(ModBlocks.SWEET_BERRY_PIE.get())
+                .unlockedBy("has_sweet_berry_pie", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.SWEET_BERRY_PIE.get()).build()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLOW_BERRY_PIE_SLICE.get(), 6)
+                .requires(ModBlocks.GLOW_BERRY_PIE.get())
+                .unlockedBy("has_glow_berry_pie", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.GLOW_BERRY_PIE.get()).build()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLUE_BERRY_PIE_SLICE.get(), 6)
+                .requires(ModBlocks.BLUE_BERRY_PIE.get())
+                .unlockedBy("has_blue_berry_pie", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.BLUE_BERRY_PIE.get()).build()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CHOCOLATE_CAKE_SLICE.get(), 6)
+                .requires(ModBlocks.CHOCOLATE_CAKE.get())
+                .unlockedBy("has_chocolate_cake", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.CHOCOLATE_CAKE.get()).build()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CARROT_CAKE_SLICE.get(), 6)
+                .requires(ModBlocks.CARROT_CAKE.get())
+                .unlockedBy("has_carrot_cake", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.CARROT_CAKE.get()).build()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KNIFE.get())
+            .pattern("   ")
+            .pattern(" I ")
+            .pattern(" S ")
+            .define('S', Items.STICK)
+            .define('I', Items.IRON_INGOT)
+            .unlockedBy("has_iron_ingot", inventoryTrigger(ItemPredicate.Builder.item().
+            of(Items.IRON_INGOT).build()))
+            .save(pWriter);
 
         //nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.RAW_ALEXANDRITE.get(), RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_BLOCK.get(),
                 //"mccourse:raw_alexandrite", "alexandrite","mccourse:raw_alexandrite_block", "alexandrite");
-        //oreSmelting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 0.25f, 200, "alexandrite");
-        //oreBlasting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 0.25f, 100, "alexandrite");
 
         oreSmelting(pWriter, BREAD_SLICE_SMELTABLE, RecipeCategory.MISC, ModItems.TOAST.get(), 0.1f, 200, "bread_slice");
-
+        foodSmoking(pWriter, BREAD_SLICE_SMELTABLE, RecipeCategory.MISC, ModItems.TOAST.get(), 0.1f, 100, "bread_slice");
+        foodCampfire(pWriter, BREAD_SLICE_SMELTABLE, RecipeCategory.MISC, ModItems.TOAST.get(), 0f, 600, "bread_slice");
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -122,5 +166,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(pFinishedRecipeConsumer, BakedNCakedMod.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
     }
+
+    protected static void foodSmoking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
+                                      float pExperience, int pCookingTime, String pGroup) {
+        oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMOKING_RECIPE, pIngredients, pCategory, pResult,
+                pExperience, pCookingTime, pGroup, "_from_smoking");
+    }
+
+    protected static void foodCampfire(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
+                                      float pExperience, int pCookingTime, String pGroup) {
+        oreCooking(pFinishedRecipeConsumer, RecipeSerializer.CAMPFIRE_COOKING_RECIPE, pIngredients, pCategory, pResult,
+                pExperience, pCookingTime, pGroup, "_from_campfire");
+    }
+
 
 }

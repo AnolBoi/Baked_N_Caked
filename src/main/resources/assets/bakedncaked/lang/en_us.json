@@ -8,5 +8,20 @@
   "item.bakedncaked.glow_berry_jam": "Glow Berry Jam",
   "item.bakedncaked.glow_berry_jam_bread_slice": "Glow Berry Jam Bread Slice",
   "item.bakedncaked.sweet_berry_jam": "Sweet Berry Jam",
-  "item.bakedncaked.sweet_berry_jam_bread_slice": "Sweet Berry Jam Bread Slice"
+  "item.bakedncaked.sweet_berry_jam_bread_slice": "Sweet Berry Jam Bread Slice",
+  "item.bakedncaked.apple_pie_slice": "Apple Pie Slice",
+  "item.bakedncaked.sweet_berry_pie_slice": "Sweet Berry Pie Slice",
+  "item.bakedncaked.glow_berry_pie_slice": "Glow Berry Pie Slice",
+  "item.bakedncaked.blue_berry_pie_slice": "Blue Berry Pie Slice",
+  "item.bakedncaked.chocolate_cake_slice": "Chocolate Cake Slice",
+  "item.bakedncaked.carrot_cake_slice": "Carrot Cake Slice",
+
+
+
+  "block.bakedncaked.apple_pie": "Apple Pie",
+  "block.bakedncaked.sweet_berry_pie": "Sweet Berry Pie",
+  "block.bakedncaked.glow_berry_pie": "Glow Berry Pie",
+  "block.bakedncaked.blue_berry_pie": "Blue Berry Pie",
+  "block.bakedncaked.chocolate_cake": "Chocolate Cake",
+  "block.bakedncaked.carrot_cake": "Carrot Cake"
 }
